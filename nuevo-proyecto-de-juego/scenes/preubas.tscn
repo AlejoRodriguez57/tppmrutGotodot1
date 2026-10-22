@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://lnw3q5rjyjpu"]
+
+[node name="Pruebas" type="Node" unique_id=1682667908]
+metadata/_edit_vertical_guides_ = [-933.0]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1187503973]
+zoom = Vector2(3.17, 3.17)
+
+[node name="Label" type="Label" parent="." unique_id=1920876628]
+offset_left = -136.0
+offset_top = -11.0
+offset_right = 134.35
+offset_bottom = 12.0
+rotation = -6.2831855
+text = "felicitaciones completaste el juego"

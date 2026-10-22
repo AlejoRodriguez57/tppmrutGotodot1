@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://db1teiu2fekeb"]
+
+[node name="Final" type="Node2D" unique_id=1740298525]
+
+[node name="Label" type="Label" parent="." unique_id=213079907]
+offset_left = 498.0
+offset_top = 304.0
+offset_right = 659.0
+offset_bottom = 353.0
+text = "        Felicitaciones
+completaste el juego"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=810836026]
+zoom = Vector2(4.263, 3.243)
