@@ -5,8 +5,7 @@ extends Node2D
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
 var _reiniciando: bool = false
-
-
+	
 func _ready() -> void:
 	_crear_nivel(_nivel_actual)
 
@@ -14,6 +13,10 @@ func _ready() -> void:
 func _crear_nivel(numero_nivel: int) -> void:
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child(_nivel_instanciado)
+	
+	if _nivel_instanciado.has_signal("todas_monedas_recogidas"):
+		_nivel_instanciado.todas_monedas_recogidas.connect(_siguiente_nivel)
+
 
 	var personajes = get_tree().get_nodes_in_group("personajes")
 
@@ -35,3 +38,10 @@ func _reiniciar_nivel() -> void:
 	_crear_nivel(_nivel_actual)
 
 	_reiniciando = false
+	
+func _siguiente_nivel() -> void:
+	_nivel_instanciado.queue_free()
+	await get_tree().process_frame
+	
+	_crear_nivel(_nivel_actual + 1)
+	
